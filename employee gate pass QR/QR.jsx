@@ -1,32 +1,52 @@
-import React from "react";
-import './css/Mycss.css';
-import Qr from './Qr';
-import Avatar from '@mui/material/Avatar';
+import React, { Component } from "react";
+import { QRCodeSVG } from "qrcode.react";
+import moment from "moment-timezone";
+import Swal from "sweetalert2";
 
-const Gatepass = () => {
+class Qr extends Component {
+  constructor() {
+    super();
+    this.state = {
+      message: ""
+    };
+  }
+
+  checkTime = () => {
+    const currentTime = moment.tz("Asia/Kolkata");
+    const fixedTime = moment.tz("10:00", "HH:mm", "Asia/Kolkata");
+
+    if (currentTime.isAfter(fixedTime)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Sorry, You are late!"
+      });
+    } else {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Welcome to work!",
+        // showConfirmButton: false,
+        // timer: 1500
+      });
+    }
+  };
+
+  handleScan = () => {
+    this.checkTime();
+  };
+
+  render() {
+    const { message } = this.state;
+
     return (
-        <>
-            <div className="container-fluid">
-                <div className="card" style={{ width: '18rem', height: '26rem'}}>
-                    <div className="card-body">
-                        <Avatar alt="Rajasree" src="/img/me.jpg" sx={{ width: 120, height: 120 }} />
-                    <div className="first">
-                        <h4 className="card-title1">Rajasree Laha</h4>
-                    </div> 
-                    <div className="second">   
-                        <h6 className="card-title"><i>Aspiring MERN Stack Developer</i></h6>
-                    </div> 
-                    <div className="third"> 
-                        <p className="card-text"><b>Id :</b> 56557</p>
-                    </div>
-                    <div className="qr">
-                         <Qr />
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </>
+      <div>
+        <QRCodeSVG value={message} size={110} />
+        <p>{message}</p>
+        <button onClick={this.handleScan}>Scan QR Code</button>
+      </div>
     );
+  }
 }
 
-export default Gatepass;
+export default Qr;
