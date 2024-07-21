@@ -1,0 +1,43 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #EEE !important;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  height: 100%;
+  width: 200%;
+  padding-bottom: 15px;
+  background-color: #fff;
+  margin-top: 10%;
+  border-radius: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gst {
+  margin-left: auto;
+}
+
+
+.inputall {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: space-between; /* Adjust spacing between items */
+  gap: 8px; /* Optional: Add space between items */
+}
+
+.input-p, .input-q, .input-r, .input-t {
+  flex: 1; /* Ensure each input takes equal space */
+}
+
