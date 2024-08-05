@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #EEE;
+}
+
+.card {
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    height: auto;
+    margin-top: 10px;
+    padding-bottom: 15px;
+  }
+}
+
+.btn {
+  margin-top: 40px;
+  height: 40px;
+  width: 120px;
+  align-self: center;
+  background-color: rgb(220, 213, 213);
+  color: green;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 200px;
+}
+
+.text-center {
+  font-family: "Open Sans", sans-serif;
+}
+
+.card {
+  height: 200px; /* Increased height to accommodate images and text */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card1 {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: auto; /* Adjusted height to auto */
+  padding: 10px; /* Added padding */
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* No font, normal font */
+
+.card-custom {
+  width: 100%;
+  height: 87%;
+}
+
+.card-custom img {
+  height: 98%;
+  object-fit: cover; /* Ensure the image covers the card section */
+}
+
+.btn-custom {
+  background-color: yellow;
+  color: black;
+  border: none; /* Remove the default button border */
+  margin: 5px;
+  border-radius: 10px; /* Make button corners round */
+}
+
+.btn-custom:hover {
+  background-color: gold; /* Change color on hover */
+}
+
+.btn-order-now {
+  background-color: green;
+  color: white;
+  border: none; /* Remove the default button border */
+  /* margin: 5px; */
+  border-radius: 10px; /* Make button corners round */
+  height: 30px; /* Adjust height */
+  width: 100px; /* Adjust width */
+  align-self: flex-end; /* Move button to the right */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn-order-now:hover {
+  background-color: darkgreen; /* Change color on hover */
+}
